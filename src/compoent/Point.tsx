@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext} from "react";
 import { MyContext } from "../context/Context";
 
 const Point = () => {
