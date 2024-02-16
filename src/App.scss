@@ -1,0 +1,176 @@
+@use "./styles/common.scss" as *;
+
+.main {
+  scroll-behavior: smooth;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  .header {
+    position: fixed;
+    bottom: -2.7%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #242424;
+    border: solid rgba(235, 232, 232, 0.418);
+    border-width: 10px 10px 0 10px;
+    border-radius: 100% 100% 5px 5px;
+    z-index: 11111;
+    @include xxxl {
+      display: none;
+    }
+    .header-menu {
+      position: relative;
+      width: 300px;
+      height: 250px;
+      filter: drop-shadow(0 20px 10px black);
+      &::after {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        content: "";
+        width: 220px;
+        height: 220px;
+        border-radius: 100%;
+        filter: blur(10px);
+        animation: rotate_3922 1.2s linear infinite;
+        background-color: #9b59b6;
+        background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+        z-index: -1;
+      }
+      .menu-item {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        outline: none;
+        border: none;
+        background: rgba(203, 230, 206, 0.562);
+        border-radius: 90px 5px 5px 5px;
+        top: 50%;
+        right: 72%;
+        transition: 1s all;
+        &:hover {
+          background-color: bisque;
+        }
+        .icon-menu {
+          position: inherit;
+          top: -20%;
+          left: 10%;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 50px 50px;
+          width: 90px;
+          height: 90px;
+          font-size: 1.5rem;
+          transform: rotate(calc((var(--rotate)) * -45deg));
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    &:hover {
+      @include show($showPointer: none);
+    }
+    .wapped {
+      flex: 0 0 100vw;
+      border: solid rgba(235, 232, 232, 0.418);
+      border-width: 1px 1px 5px 1px;
+      background-image: linear-gradient(to top, #0f0f0f70 40%, #68686869);
+      .wapped-content {
+        height: 100%;
+      }
+    }
+    .skill {
+      @include flexCenter(space-around);
+      gap: 20px;
+      .box-item {
+        position: relative;
+        flex: .5;
+        max-width: 500px;
+        max-height: 600px;
+        padding: 20px;
+        border: 1px solid rgba(190, 189, 189, 0.836);
+        border-radius: 10px;
+        box-shadow: 0 15px 15px black;
+        @include flexCenter(start, center, column);
+        @include xxl {
+        flex: .25;
+        flex-wrap: wrap;
+
+        height: 450px;
+
+        }
+        &::after{
+          position: absolute;
+          top: 6%;
+          content: "";
+          height: 300px;
+          width: 1.5px;
+          background-image: linear-gradient(to bottom, white ,rgba(63, 63, 63, 0.479));
+          z-index: -1;
+          
+        }
+        
+        &:nth-child(2){
+          &::after{
+            position: absolute;
+            top: 6%;
+            content: "";
+            height: 150px;
+            width: 1.5px;
+            background-image: linear-gradient(to bottom, white ,rgba(63, 63, 63, 0.479));
+            z-index: -1;
+          }
+        }
+        h2,p{
+        transition: .5s all;
+
+          &:hover{
+              transform: scale(1.2);
+          }
+        }
+      }
+    }
+    .project-page{
+      padding: 20px;
+      @include flexCenter(center,center);
+      gap: 50px;
+      .projects{
+      @include flexCenter(center,center,column);
+
+      }
+      .img__project{
+        width:300px ;
+        height:300px ;
+        box-shadow: 0 10px 20px black;
+        background-size: cover;
+        background-repeat: no-repeat;
+     
+      }
+    }
+    .contact__page{
+      @extend .skill ;
+        .box-item{
+          height: 300px;
+          &::after{
+          height: 200px;
+
+          }
+        }
+      
+
+    }
+  }
+}
+@keyframes rotate_3922 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
