@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { MyContext } from "../context/Context";
 import { routesPage } from "../routes/routes";
 import { useContext } from "react";
-
 const Header = () => {
   const { setPageActive, pageActive, setShowPoint } = useContext(MyContext);
   return (
@@ -13,18 +13,19 @@ const Header = () => {
       onPointerLeave={() => {
         setShowPoint(false);
       }}
-    >
+      >
       <div className="header-menu">
         {routesPage.map((route, index) => {
           const i = 1 + index * 2;
           const x = index < 2 ? (index === 0 ? 2.5 : 4) : index === 2 ? 2.5 : 1;
           const y =
-            index < 2 ? (index === 0 ? -2 : -0.5) : index === 2 ? 1 : -0.5;
+          index < 2 ? (index === 0 ? -2 : -0.5) : index === 2 ? 1 : -0.5;
           const selectPage = pageActive === index ? true : false;
           return (
             <a
-              className="menu-item"
-              style={{
+            className="menu-item"
+            style={{
+                // @ts-ignore
                 "--translateX": x,
                 "--translateY": y,
                 "--rotate": i,
