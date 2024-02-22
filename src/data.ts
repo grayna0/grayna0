@@ -23,15 +23,15 @@ const social = [
     {
         name:"Github",
         nickname:"grayna0",
-        link:"",
-        icon:""
+        link:"https://github.com/grayna0",
+        icon:"github-mark-white.svg"
     },
     {
         name:"Email",
         nickname:"thangluongthanh8",
 
         link:"",
-        icon:""
+        icon:"mail.png"
     },
     
 ]
