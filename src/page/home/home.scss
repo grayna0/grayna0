@@ -14,7 +14,7 @@
         .text__gradient {
           height: 200px;
           background-image: linear-gradient(90deg, #fff, #6b2727);
-          background-clip: text;
+          -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: opendoor 3s linear  1 alternate;
           @include xl {
@@ -40,7 +40,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 20%;
-        mix-blend-mode: lighten;
       }
     }
   }

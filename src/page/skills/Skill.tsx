@@ -34,7 +34,6 @@ const Skill = () => {
         <p>Javascript</p>
         <p>Typescript</p>
         <p>React</p>
-
       </div>
       <div className="minor box-item" >
         <span>
@@ -53,8 +52,9 @@ const Skill = () => {
           </svg>
         </span>
         <h2>Minor</h2>
-        <p>Vue</p>
         <p>MongoDb</p>
+        <p>Vue</p>
+
       </div>
       <div className="other box-item">
         <span>
