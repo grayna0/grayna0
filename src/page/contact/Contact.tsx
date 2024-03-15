@@ -3,7 +3,7 @@ import { MyContext } from '../../context/Context'
 import { social } from '../../data'
 
 const Contact = () => {
-  const { setPageActive} = useContext(MyContext)
+  const { setPageActive} = useContext(MyContext);
   return (
     <div className='wapped-content contact__page' onMouseEnter={() => setPageActive(3)} id="3">
           {social.map((item,index)=> {

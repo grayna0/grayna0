@@ -8,7 +8,7 @@
 
   .header {
     position: fixed;
-    top:calc(100vh - (222px));
+    // top:calc(100vh - (222px));
     right: 50%;
     transform: translate(50%, -50%);
     background-color: #242424;
@@ -69,12 +69,14 @@
   }
 
   .container {
+    position: relative;
     display: flex;
     gap: 20px;
     &:hover {
       @include show($showPointer: none);
     }
     .wapped {
+      overflow: hidden;
       flex: 0 0 100vw;
       border: solid rgba(235, 232, 232, 0.418);
       border-width: 1px 1px 5px 1px;

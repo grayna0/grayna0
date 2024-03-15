@@ -1,9 +1,17 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { MyContext } from "../context/Context";
 import { routesPage } from "../routes/routes";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 const Header = () => {
   const { setPageActive, pageActive, setShowPoint } = useContext(MyContext);
+  const [positionTopH , setPositionTopH] = useState<number>(0)
+  useEffect(()=>{
+    const container =document.getElementById("container");
+
+    container?.getClientRects()[0].height ? setPositionTopH(container?.getClientRects()[0].height) : false;
+  },[])
+
+  
   return (
     <div
       className="header"
@@ -13,6 +21,7 @@ const Header = () => {
       onPointerLeave={() => {
         setShowPoint(false);
       }}
+      style={{ top: `${positionTopH - 250/2 -5 }px`}}
       >
       <div className="header-menu">
         {routesPage.map((route, index) => {
